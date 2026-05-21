@@ -4,16 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YLR Sri Vaishnavi Borusu | Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio website for YLR Sri Vaishnavi Borusu - MS in Computer Science at the University of Florida, focused on AI, ML, data science, software engineering, and product analytics."
-    />
+    <meta name="description" content="Portfolio website for YLR Sri Vaishnavi Borusu - MS in Computer Science at the University of Florida, focused on AI, ML, data science, software engineering, and product analytics." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -26,13 +20,9 @@
           <span class="brand-mark">YB</span>
           <span class="brand-text">YLR Sri Vaishnavi Borusu</span>
         </a>
-
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
-
         <nav class="nav" id="siteNav">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
@@ -44,37 +34,31 @@
     </header>
 
     <main>
+      <!-- HERO -->
       <section class="hero section">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow">AI • Data • Software • Product Analytics</p>
+            <p class="eyebrow">AI · Data · Software · Product Analytics</p>
             <h1>
               Building intelligent systems at the intersection of
               <span class="gradient-text">machine learning</span>,
               <span class="gradient-text">data engineering</span>, and
               <span class="gradient-text">scalable software</span>.
             </h1>
-            <p class="hero-text">
-          
-
-            </p>
-
             <div class="hero-actions">
               <a class="btn btn-primary" href="#projects">View Projects</a>
               <a class="btn btn-secondary" href="mailto:s.borusu@ufl.edu">Email Me</a>
               <a class="btn btn-secondary" href="https://github.com/BSriVaishnavi" target="_blank">GitHub</a>
             </div>
-
             <div class="mini-stats">
               <div class="stat-card glass reveal">
-                <span class="stat-number" data-target="9">0</span>
+                <span class="stat-number" data-target="6">0</span>
                 <span class="stat-label">Featured Projects</span>
               </div>
               <div class="stat-card glass reveal">
                 <span class="stat-number" data-target="3.89">0</span>
                 <span class="stat-label">Graduate GPA</span>
               </div>
-              
             </div>
           </div>
 
@@ -83,44 +67,47 @@
               <span class="status-dot"></span>
               <span>Open to internships and technical opportunities</span>
             </div>
-
             <div class="profile-block">
               <h2>YLR Sri Vaishnavi Borusu</h2>
               <p>Gainesville, FL</p>
               <p>M.S. Computer Science (CISE), University of Florida</p>
             </div>
-
             <div class="focus-grid">
               <div class="focus-chip">Machine Learning</div>
               <div class="focus-chip">Data Science</div>
               <div class="focus-chip">RAG Systems</div>
-              <div class="focus-chip">Full-Stack Development</div>
+              <div class="focus-chip">Full-Stack Dev</div>
               <div class="focus-chip">Product Analytics</div>
               <div class="focus-chip">Distributed Systems</div>
             </div>
-
-            
           </aside>
         </div>
       </section>
 
+      <!-- ABOUT -->
       <section class="section" id="about">
         <div class="container two-col">
           <div class="section-heading reveal">
             <p class="eyebrow">About Me</p>
             <h2>Thoughtful engineering with measurable outcomes.</h2>
           </div>
-          <div class="glass content-card reveal">
-            <p>
-              Focused on machine learning, analytics, experimentation, and software engineering, with a strong interest in building systems that connect technical depth with real-world impact. Particularly drawn to retrieval pipelines, forecasting systems, experimentation dashboards, and multi-user web applications.
-            </p>
-            <p>
-              Clarity, performance, and usability remain central across every stage—from data analysis in Python and SQL to model development and backend API design. The goal is to build systems that are practical, thoughtful, and genuinely useful.
-            </p>
+          <div class="expandable-card glass reveal" data-expanded="false">
+            <div class="card-preview">
+              <p class="preview-text">Focused on machine learning, analytics, experimentation, and software engineering — connecting technical depth with real-world impact.</p>
+              <button class="expand-btn" aria-label="Read more about me">
+                <span class="expand-label">Read more</span>
+                <span class="expand-icon">↓</span>
+              </button>
+            </div>
+            <div class="card-details">
+              <p>Particularly drawn to retrieval pipelines, forecasting systems, experimentation dashboards, and multi-user web applications.</p>
+              <p>Clarity, performance, and usability remain central across every stage — from data analysis in Python and SQL to model development and backend API design. The goal is to build systems that are practical, thoughtful, and genuinely useful.</p>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- PROJECTS -->
       <section class="section" id="projects">
         <div class="container">
           <div class="section-header reveal">
@@ -137,164 +124,144 @@
           </div>
 
           <div class="projects-grid">
-            <article class="project-card glass reveal" data-category="ml data" style="border-color: rgba(102,126,234,0.25);">
-  <div class="project-top">
-    <span class="project-tag">A/B Testing · Causal Inference</span>
-    <span class="project-date">May 2026 – Present</span>
-  </div>
-  <h3>Causal Marketplace Experimentation Platform</h3>
-  <p>
-    Built a full-stack A/B experimentation platform on a simulated fashion-electronics marketplace, demonstrating where naive A/B testing fails under seasonal confounding and applying causal inference methods to recover true treatment effects.
-  </p>
-  <ul>
-    <li>Simulated 10K users, 800 products, and 200K interactions with seasonal confounding baked in — naive A/B testing (p&lt;0.001) falsely concluded control won, missing <strong>$15,657 in estimated revenue</strong></li>
-    <li>Applied Difference-in-Differences (+1.37pp causal lift, p&lt;0.001) and Synthetic Control (peak lift +2.96pp in December, donor weights 22%/78%) — business decision flipped from "kill variant" to "ship it"</li>
-    <li>Deployed FastAPI recommendation engine with Swagger docs + 5-page interactive Streamlit dashboard visualizing A/B vs DiD vs Synthetic Control side by side</li>
-  </ul>
-  <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
-    <a href="https://causal-marketplace.streamlit.app/" target="_blank" class="btn btn-primary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">🛍️ Live Demo</a>
-    <a href="https://github.com/BSriVaishnavi/causal-marketplace" target="_blank" class="btn btn-secondary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">GitHub</a>
-  </div>
-</article>
-            <article class="project-card glass reveal" data-category="ml nlp" style="border-color: rgba(29,158,117,0.25);">
-  <div class="project-top">
-    <span class="project-tag">NLP · Biodiversity Informatics</span>
-    <span class="project-date">Apr 2026 – May 2026</span>
-  </div>
-  <h3>Florida Biodiversity NER Pipeline</h3>
-  <p>
-    Built an end-to-end Named Entity Recognition pipeline over 29,981 real iNaturalist citizen science observations, extracting species, behaviors, and habitats from informal naturalist field notes.
-  </p>
-  <ul>
-    <li>Constructed a 300-sentence gold-standard annotation dataset (Cohen's Kappa = 0.8855); compared bert-base-cased (F1 = 0.7632) vs BioBERT (F1 = 0.7723), confirming scientific pre-training improves biological NER</li>
-    <li>Rule-based baseline achieved F1 = 0.959, extracting 100,950 entities and 57,299 structured species-behavior-habitat triplets from 35,015 sentences</li>
-    <li>Deployed interactive Streamlit query interface enabling real-time biodiversity exploration — no code required</li>
-  </ul>
-  <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
-    <a href="https://florida-biodiversity-ner-bsrivaishnavi.streamlit.app" target="_blank" class="btn btn-primary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">🌿 Live Demo</a>
-    <a href="https://github.com/BSriVaishnavi/Florida-Biodiversity-NER" target="_blank" class="btn btn-secondary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">GitHub</a>
-  </div>
-</article>
-            <article class="project-card glass reveal" data-category="ml data" style="border-color: rgba(119,230,255,0.25);">
-  <div class="project-top">
-    <span class="project-tag">ML Engineering</span>
-    <span class="project-date">Apr 2026 – May 2026</span>
-  </div>
-  <h3>Session-Aware Music Recommender</h3>
-  <p>
-    Built a mood trajectory-aware recommendation system over 1.87M real Last.fm scrobbles, modeling how listening sessions evolve emotionally over time.
-  </p>
-  <ul>
-    <li>Clustered 164K sessions into 8 mood archetypes; trained PyTorch GRU achieving 49.9% trajectory accuracy (4× random baseline)</li>
-    <li>LightGBM ranker achieving AUC 0.90 on 4.2M session-track pairs; novel Mood Coherence Score 0.864 vs 0.850 baseline</li>
-    <li>Deployed FastAPI + Streamlit "DJ Mode" at ~25ms response time on HuggingFace</li>
-  </ul>
-  <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
-    <a href="https://bsrivaishnavi-session-aware-recommender.hf.space" target="_blank" class="btn btn-primary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">🎵 Live Demo</a>
-    <a href="https://github.com/BSriVaishnavi/session-aware-recommender" target="_blank" class="btn btn-secondary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">GitHub</a>
-  </div>
-</article>
-            <article class="project-card glass reveal" data-category="data">
-              <div class="project-top">
-                <span class="project-tag">Product Analytics</span>
-                <span class="project-date">Jan 2025 – Apr 2025</span>
+
+            <article class="project-card glass reveal expandable-card" data-category="data" data-expanded="false">
+              <div class="card-preview">
+                <div class="project-top">
+                  <span class="project-tag">Product Analytics</span>
+                  <span class="project-date">Jan–Apr 2025</span>
+                </div>
+                <h3>A/B Testing & Analytics Platform</h3>
+                <p class="preview-text">Designed and analyzed controlled experiments to understand CTR, conversion, retention, and funnel drop-offs using Python and SQL.</p>
+                <button class="expand-btn" aria-label="View project details">
+                  <span class="expand-label">Details</span>
+                  <span class="expand-icon">↓</span>
+                </button>
               </div>
-              <h3>A/B Testing & Product Analytics Platform</h3>
-              <p>
-                Designed and analyzed controlled experiments to understand CTR, conversion, retention, and funnel drop-offs using Python and SQL
-              </p>
-              <ul>
-                <li>Applied hypothesis testing and confidence intervals to validate results</li>
-                <li>Built interactive dashboards to communicate insights to product teams</li>
-                <li>Translated experiment outcomes into data-driven product decisions</li>
-              </ul>
+              <div class="card-details">
+                <ul>
+                  <li>Applied hypothesis testing and confidence intervals to validate results</li>
+                  <li>Built interactive dashboards to communicate insights to product teams</li>
+                  <li>Translated experiment outcomes into data-driven product decisions</li>
+                </ul>
+              </div>
             </article>
 
-            <article class="project-card glass reveal" data-category="ml data">
-              <div class="project-top">
-                <span class="project-tag">RAG / AI Engineering</span>
-                <span class="project-date">Jan 2025 – Apr 2025</span>
+            <article class="project-card glass reveal expandable-card" data-category="ml data" data-expanded="false">
+              <div class="card-preview">
+                <div class="project-top">
+                  <span class="project-tag">RAG / AI Engineering</span>
+                  <span class="project-date">Jan–Apr 2025</span>
+                </div>
+                <h3>Data Engineering Pipeline with RAG</h3>
+                <p class="preview-text">Scalable RAG-based system using LangChain, Chroma, and Hugging Face embeddings for intelligent querying over unstructured data.</p>
+                <button class="expand-btn" aria-label="View project details">
+                  <span class="expand-label">Details</span>
+                  <span class="expand-icon">↓</span>
+                </button>
               </div>
-              <h3>End-to-End Data Engineering Pipeline with RAG</h3>
-              <p>
-                Developed a scalable RAG-based system using LangChain, Chroma, and Hugging Face embeddings for intelligent querying over unstructured data.
-              </p>
-              <ul>
-                <li>Implemented document chunking and vector retrieval pipelines for efficient search</li>
-                <li>Improved search relevance using Precision@k and Mean Reciprocal Rank (MRR)</li>
-                <li>Integrated LLMs for contextual response generation, enabling more accurate and natural answers</li>
-              </ul>
+              <div class="card-details">
+                <ul>
+                  <li>Implemented document chunking and vector retrieval pipelines for efficient search</li>
+                  <li>Improved search relevance using Precision@k and Mean Reciprocal Rank (MRR)</li>
+                  <li>Integrated LLMs for contextual response generation, enabling more accurate and natural answers</li>
+                </ul>
+              </div>
             </article>
 
-            <article class="project-card glass reveal" data-category="web">
-              <div class="project-top">
-                <span class="project-tag">Software Engineering</span>
-                <span class="project-date">Jan 2025 – Apr 2025</span>
+            <article class="project-card glass reveal expandable-card" data-category="web" data-expanded="false">
+              <div class="card-preview">
+                <div class="project-top">
+                  <span class="project-tag">Software Engineering</span>
+                  <span class="project-date">Jan–Apr 2025</span>
+                </div>
+                <h3>The Grid – Collaborative Platform</h3>
+                <p class="preview-text">Backend services, authentication workflows, and REST APIs using Go, GoSwagger, and SQL for a multi-user collaboration platform.</p>
+                <button class="expand-btn" aria-label="View project details">
+                  <span class="expand-label">Details</span>
+                  <span class="expand-icon">↓</span>
+                </button>
               </div>
-              <h3>The Grid – Collaborative Web Platform</h3>
-              <p>
-                Developed backend services, authentication workflows, and REST APIs using Go, GoSwagger, and SQL for a multi-user collaboration platform.
-              </p>
-              <ul>
-                <li>Implemented project-management features for team workflows</li>
-                <li>Worked in an agile Git-based workflow development process</li>
-                <li>Focused on backend reliability and smooth collaboration across users</li>
-              </ul>
+              <div class="card-details">
+                <ul>
+                  <li>Implemented project-management features for team workflows</li>
+                  <li>Worked in an agile Git-based workflow development process</li>
+                  <li>Focused on backend reliability and smooth collaboration across users</li>
+                </ul>
+              </div>
             </article>
 
-            <article class="project-card glass reveal" data-category="ml data">
-              <div class="project-top">
-                <span class="project-tag">Forecasting</span>
-                <span class="project-date">Aug 2025 – Dec 2025</span>
+            <article class="project-card glass reveal expandable-card" data-category="ml data" data-expanded="false">
+              <div class="card-preview">
+                <div class="project-top">
+                  <span class="project-tag">Forecasting</span>
+                  <span class="project-date">Aug–Dec 2025</span>
+                </div>
+                <h3>Air Temperature Prediction</h3>
+                <p class="preview-text">LSTM and XGBoost models forecasting air temperature from 8+ years of MODIS satellite data across international airports in India.</p>
+                <button class="expand-btn" aria-label="View project details">
+                  <span class="expand-label">Details</span>
+                  <span class="expand-icon">↓</span>
+                </button>
               </div>
-              <h3>Air Temperature Prediction from Satellite Data</h3>
-              <p>
-                Built LSTM and XGBoost models to forecast air temperature using 8+ years of MODIS Land Surface Temperature data from international airports in Hyderabad, Bangalore, and Mumbai.
-              </p>
-              <ul>
-    <li>Created lag variables and rolling statistics for temporal feature engineering</li>
-    <li>Performed exploratory data analysis and visualized seasonal trends using Pandas and Matplotlib</li>
-    <li>Built LSTM and XGBoost models achieving 2.1°C RMSE, reducing prediction error by 39% over baseline</li>
-    <li>Conducted model comparisons to select best-performing forecasting approach</li>
-    <li>Communicated insights through clear visualizations and summaries for technical and non-technical audiences</li>
-  </ul>
+              <div class="card-details">
+                <ul>
+                  <li>Created lag variables and rolling statistics for temporal feature engineering</li>
+                  <li>Performed exploratory data analysis and visualized seasonal trends using Pandas and Matplotlib</li>
+                  <li>Achieved 2.1°C RMSE, reducing prediction error by 39% over baseline</li>
+                  <li>Conducted model comparisons to select best-performing forecasting approach</li>
+                </ul>
+              </div>
             </article>
 
-            <article class="project-card glass reveal" data-category="ml">
-              <div class="project-top">
-                <span class="project-tag">NLP</span>
-                <span class="project-date">Aug 2024 – Dec 2024</span>
+            <article class="project-card glass reveal expandable-card" data-category="ml" data-expanded="false">
+              <div class="card-preview">
+                <div class="project-top">
+                  <span class="project-tag">NLP</span>
+                  <span class="project-date">Aug–Dec 2024</span>
+                </div>
+                <h3>RecipeGen – Recipe Generation</h3>
+                <p class="preview-text">Transformer-based text generation model that creates step-by-step recipes from ingredient lists.</p>
+                <button class="expand-btn" aria-label="View project details">
+                  <span class="expand-label">Details</span>
+                  <span class="expand-icon">↓</span>
+                </button>
               </div>
-              <h3>RecipeGen – Ingredient-Based Recipe Generation</h3>
-              <p>
-                Developed a transformer-based text generation model that creates step-by-step recipes from ingredient lists, enabling intuitive recipe creation from raw ingredients.
-              </p>
-              <ul>
-                <li>Improved dataset quality through preprocessing and cleaning</li>
-                <li>Used beam search with length penalties to generate more coherent and realistic recipes</li>
-                <li>Achieved a BLEU-4 score of 0.28, demonstrating improved recipe quality and relevance</li>
-              </ul>
+              <div class="card-details">
+                <ul>
+                  <li>Improved dataset quality through preprocessing and cleaning</li>
+                  <li>Used beam search with length penalties for more coherent and realistic recipes</li>
+                  <li>Achieved a BLEU-4 score of 0.28, demonstrating improved recipe quality and relevance</li>
+                </ul>
+              </div>
             </article>
 
-            <article class="project-card glass reveal" data-category="ml">
-              <div class="project-top">
-                <span class="project-tag">Computer Vision</span>
-                <span class="project-date">Jan 2024 – Jun 2024</span>
+            <article class="project-card glass reveal expandable-card" data-category="ml" data-expanded="false">
+              <div class="card-preview">
+                <div class="project-top">
+                  <span class="project-tag">Computer Vision</span>
+                  <span class="project-date">Jan–Jun 2024</span>
+                </div>
+                <h3>Skin Lesion Classification</h3>
+                <p class="preview-text">CNN models using ResNet50 and VGG16 transfer learning to classify dermoscopic images, supporting early detection.</p>
+                <button class="expand-btn" aria-label="View project details">
+                  <span class="expand-label">Details</span>
+                  <span class="expand-icon">↓</span>
+                </button>
               </div>
-              <h3>Skin Lesion Classification</h3>
-              <p>
-                Built CNN models using ResNet50 and VGG16 transfer learning to classify dermoscopic images of skin lesions, supporting early detection.
-              </p>
-              <ul>
-                <li>Applied data augmentation and class balancing to improve model robustness and handle dataset imbalances</li>
-                <li>Achieved 81.7% test accuracy and a 0.76 macro F1-score, demonstrating reliable multi-class performance</li>
-                
-              </ul>
+              <div class="card-details">
+                <ul>
+                  <li>Applied data augmentation and class balancing to improve robustness</li>
+                  <li>Achieved 81.7% test accuracy and a 0.76 macro F1-score across multiple classes</li>
+                </ul>
+              </div>
             </article>
+
           </div>
         </div>
       </section>
 
+      <!-- SKILLS -->
       <section class="section" id="skills">
         <div class="container two-col-skills">
           <div class="section-heading reveal">
@@ -303,93 +270,127 @@
           </div>
 
           <div class="skills-layout">
-            <div class="glass skill-panel reveal">
-              <h3>Languages & Frameworks</h3>
-              <div class="skill-cloud">
-                <span>Python</span>
-                <span>SQL</span>
-                <span>C</span>
-                <span>C++</span>
-                <span>Java</span>
-                <span>JavaScript</span>
-                <span>Next.js</span>
-                <span>FastAPI</span>
-                <span>Go</span>
+
+            <div class="glass skill-panel expandable-card reveal" data-expanded="false">
+              <div class="card-preview">
+                <h3>Languages & Frameworks</h3>
+                <div class="skill-preview-chips">
+                  <span>Python</span><span>SQL</span><span>Go</span><span class="chip-more">+6 more</span>
+                </div>
+                <button class="expand-btn" aria-label="See all languages">
+                  <span class="expand-label">See all</span>
+                  <span class="expand-icon">↓</span>
+                </button>
+              </div>
+              <div class="card-details">
+                <div class="skill-cloud">
+                  <span>Python</span><span>SQL</span><span>C</span><span>C++</span>
+                  <span>Java</span><span>JavaScript</span><span>Next.js</span>
+                  <span>FastAPI</span><span>Go</span>
+                </div>
               </div>
             </div>
 
-            <div class="glass skill-panel reveal">
-              <h3>ML, AI & Data</h3>
-              <div class="skill-cloud">
-                <span>PyTorch</span>
-                <span>TensorFlow</span>
-                <span>Scikit-learn</span>
-                <span>LangChain</span>
-                <span>LangGraph</span>
-                <span>LLMs</span>
-                <span>Agentic AI</span>
-                <span>MLflow</span>
-                <span>Pandas</span>
-                <span>NumPy</span>
+            <div class="glass skill-panel expandable-card reveal" data-expanded="false">
+              <div class="card-preview">
+                <h3>ML, AI & Data</h3>
+                <div class="skill-preview-chips">
+                  <span>PyTorch</span><span>LangChain</span><span>LLMs</span><span class="chip-more">+7 more</span>
+                </div>
+                <button class="expand-btn" aria-label="See all ML tools">
+                  <span class="expand-label">See all</span>
+                  <span class="expand-icon">↓</span>
+                </button>
+              </div>
+              <div class="card-details">
+                <div class="skill-cloud">
+                  <span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span>
+                  <span>LangChain</span><span>LangGraph</span><span>LLMs</span>
+                  <span>Agentic AI</span><span>MLflow</span><span>Pandas</span><span>NumPy</span>
+                </div>
               </div>
             </div>
 
-            <div class="glass skill-panel reveal">
-              <h3>Tools & Infrastructure</h3>
-              <div class="skill-cloud">
-                <span>Git</span>
-                <span>Docker</span>
-                <span>ApacheSpark</span>
-                <span>PySpark</span>
-                <span>Distributed Computing</span>
-                <span>Scalable Systems</span>
-                <span>Power BI</span>
-                <span>Matplotlib</span>
-                <span>Seaborn</span>
-                <span>Canva</span>
+            <div class="glass skill-panel expandable-card reveal" data-expanded="false">
+              <div class="card-preview">
+                <h3>Tools & Infrastructure</h3>
+                <div class="skill-preview-chips">
+                  <span>Docker</span><span>Apache Spark</span><span>Power BI</span><span class="chip-more">+7 more</span>
+                </div>
+                <button class="expand-btn" aria-label="See all tools">
+                  <span class="expand-label">See all</span>
+                  <span class="expand-icon">↓</span>
+                </button>
+              </div>
+              <div class="card-details">
+                <div class="skill-cloud">
+                  <span>Git</span><span>Docker</span><span>Apache Spark</span>
+                  <span>PySpark</span><span>Distributed Computing</span>
+                  <span>Scalable Systems</span><span>Power BI</span>
+                  <span>Matplotlib</span><span>Seaborn</span><span>Canva</span>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
+      <!-- EDUCATION -->
       <section class="section" id="education">
         <div class="container education-grid">
-          <div class="glass education-card reveal">
-            <p class="eyebrow">Education</p>
-            <h2>University of Florida</h2>
-            <p class="degree">Master of Science in Computer Science (CISE)</p>
-            <p class="meta">Gainesville, FL • Aug 2025 – Present</p>
-            <div class="edu-highlight">GPA: 3.89</div>
+          <div class="glass education-card expandable-card reveal" data-expanded="false">
+            <div class="card-preview">
+              <p class="eyebrow">Education</p>
+              <h2>University of Florida</h2>
+              <p class="degree">M.S. Computer Science (CISE)</p>
+              <div class="edu-highlight">GPA: 3.89</div>
+              <button class="expand-btn" aria-label="See education details">
+                <span class="expand-label">More details</span>
+                <span class="expand-icon">↓</span>
+              </button>
+            </div>
+            <div class="card-details">
+              <p class="meta">Gainesville, FL · Aug 2025 – Present</p>
+              <p style="color: var(--muted); font-size: 0.9rem;">Full-time graduate student in the Department of Computer and Information Science and Engineering.</p>
+            </div>
           </div>
 
-          <div class="glass coursework-card reveal">
-            <h3>Relevant Coursework</h3>
-            <div class="course-list">
-              <span>AI</span>
-              <span>Machine Learning Engineering</span>
-              <span>Data Science</span>
-              <span>Distributed Systems</span>
-              <span>Software Engineering</span>
+          <div class="glass coursework-card expandable-card reveal" data-expanded="false">
+            <div class="card-preview">
+              <h3>Relevant Coursework</h3>
+              <div class="skill-preview-chips">
+                <span>AI</span><span>Machine Learning</span><span class="chip-more">+3 more</span>
+              </div>
+              <button class="expand-btn" aria-label="See all coursework">
+                <span class="expand-label">See all courses</span>
+                <span class="expand-icon">↓</span>
+              </button>
+            </div>
+            <div class="card-details">
+              <div class="course-list">
+                <span>AI</span>
+                <span>Machine Learning Engineering</span>
+                <span>Data Science</span>
+                <span>Distributed Systems</span>
+                <span>Software Engineering</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- CONTACT -->
       <section class="section" id="contact">
         <div class="container">
           <div class="contact-card glass reveal">
-            <p class="eyebrow">Let’s Connect</p>
+            <p class="eyebrow">Let's Connect</p>
             <h2>Open to impactful collaborations.</h2>
-            <p>
-              I’m always excited about opportunities in software engineering, machine learning,
-              AI engineering, data science, and analytics.
-            </p>
-
-            <div class="contact-links" style="display: flex; justify-content: center; gap: 1rem;">
-  <a class="btn btn-primary" href="mailto:s.borusu@ufl.edu">s.borusu@ufl.edu</a>
-  <a class="btn btn-secondary" href="https://github.com/BSriVaishnavi" target="_blank" rel="noreferrer">GitHub</a>
-</div>
+            <p>Always excited about opportunities in software engineering, machine learning, AI engineering, data science, and analytics.</p>
+            <div class="contact-links">
+              <a class="btn btn-primary" href="mailto:s.borusu@ufl.edu">s.borusu@ufl.edu</a>
+              <a class="btn btn-secondary" href="https://github.com/BSriVaishnavi" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
           </div>
         </div>
       </section>
