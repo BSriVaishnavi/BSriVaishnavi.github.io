@@ -67,7 +67,7 @@
 
             <div class="mini-stats">
               <div class="stat-card glass reveal">
-                <span class="stat-number" data-target="6">0</span>
+                <span class="stat-number" data-target="7">0</span>
                 <span class="stat-label">Featured Projects</span>
               </div>
               <div class="stat-card glass reveal">
@@ -137,6 +137,25 @@
           </div>
 
           <div class="projects-grid">
+            <article class="project-card glass reveal" data-category="ml data" style="border-color: rgba(119,230,255,0.25);">
+  <div class="project-top">
+    <span class="project-tag">ML Engineering</span>
+    <span class="project-date">Jan 2026 – May 2026</span>
+  </div>
+  <h3>Session-Aware Music Recommender</h3>
+  <p>
+    Built a mood trajectory-aware recommendation system over 1.87M real Last.fm scrobbles, modeling how listening sessions evolve emotionally over time.
+  </p>
+  <ul>
+    <li>Clustered 164K sessions into 8 mood archetypes; trained PyTorch GRU achieving 49.9% trajectory accuracy (4× random baseline)</li>
+    <li>LightGBM ranker achieving AUC 0.90 on 4.2M session-track pairs; novel Mood Coherence Score 0.864 vs 0.850 baseline</li>
+    <li>Deployed FastAPI + Streamlit "DJ Mode" at ~25ms response time on HuggingFace</li>
+  </ul>
+  <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+    <a href="https://bsrivaishnavi-session-aware-recommender.hf.space" target="_blank" class="btn btn-primary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">🎵 Live Demo</a>
+    <a href="https://github.com/BSriVaishnavi/session-aware-recommender" target="_blank" class="btn btn-secondary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">GitHub</a>
+  </div>
+</article>
             <article class="project-card glass reveal" data-category="data">
               <div class="project-top">
                 <span class="project-tag">Product Analytics</span>
