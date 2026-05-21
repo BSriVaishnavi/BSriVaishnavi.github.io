@@ -113,3 +113,17 @@ const statsObserver = new IntersectionObserver(
 );
 
 document.querySelectorAll('.stat-number').forEach((n) => statsObserver.observe(n));
+
+const moreBtn = document.getElementById('moreProjectsBtn');
+const moreDrawer = document.getElementById('moreProjectsDrawer');
+
+if (moreBtn && moreDrawer) {
+  moreBtn.addEventListener('click', () => {
+    const isOpen = moreDrawer.classList.toggle('open');
+    moreBtn.setAttribute('aria-expanded', String(isOpen));
+    const label = moreBtn.querySelector('span');
+    const icon = moreBtn.querySelector('.expand-icon');
+    if (label) label.textContent = isOpen ? 'Show Less' : 'More Projects';
+    if (icon) icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+  });
+}

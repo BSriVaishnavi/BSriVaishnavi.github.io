@@ -6,10 +6,9 @@
     <title>YLR Sri Vaishnavi Borusu | Portfolio</title>
     <meta name="description" content="Portfolio website for YLR Sri Vaishnavi Borusu - MS in Computer Science at the University of Florida, focused on AI, ML, data science, software engineering, and product analytics." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Zilla+Slab:wght@400;500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />  </head>
   <body>
     <div class="page-glow glow-1"></div>
     <div class="page-glow glow-2"></div>
@@ -41,9 +40,9 @@
             <p class="eyebrow">AI · Data · Software · Product Analytics</p>
             <h1>
               Building intelligent systems at the intersection of
-              <span class="gradient-text">machine learning</span>,
-              <span class="gradient-text">data engineering</span>, and
-              <span class="gradient-text">scalable software</span>.
+              <span class="gradient-text-gold">machine learning</span>,
+<span class="gradient-text-orange">data engineering</span>, and
+<span class="gradient-text-teal">scalable software</span>.
             </h1>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#projects">View Projects</a>
@@ -52,7 +51,7 @@
             </div>
             <div class="mini-stats">
               <div class="stat-card glass reveal">
-                <span class="stat-number" data-target="6">0</span>
+                <span class="stat-number" data-target="7">0</span>
                 <span class="stat-label">Featured Projects</span>
               </div>
               <div class="stat-card glass reveal">
@@ -109,157 +108,205 @@
 
       <!-- PROJECTS -->
       <section class="section" id="projects">
-        <div class="container">
-          <div class="section-header reveal">
-            <div>
-              <p class="eyebrow">Selected Work</p>
-              <h2>Projects</h2>
-            </div>
-            <div class="project-filters">
-              <button class="filter-btn active" data-filter="all">All</button>
-              <button class="filter-btn" data-filter="ml">ML / AI</button>
-              <button class="filter-btn" data-filter="data">Data</button>
-              <button class="filter-btn" data-filter="web">Software</button>
-            </div>
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <p class="eyebrow">Selected Work</p>
+        <h2>Projects</h2>
+      </div>
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ml">ML / AI</button>
+        <button class="filter-btn" data-filter="data">Data</button>
+        <button class="filter-btn" data-filter="web">Software</button>
+      </div>
+    </div>
+
+    <!-- TOP 3 FEATURED -->
+    <div class="projects-grid">
+
+      <article class="project-card glass reveal expandable-card" data-category="ml" data-expanded="false" style="border-color: rgba(119,230,255,0.25);">
+        <div class="card-preview">
+          <div class="project-top">
+            <span class="project-tag">ML Engineering</span>
+            <span class="project-date">Apr 2026 – May 2026</span>
           </div>
-
-          <div class="projects-grid">
-
-            <article class="project-card glass reveal expandable-card" data-category="data" data-expanded="false">
-              <div class="card-preview">
-                <div class="project-top">
-                  <span class="project-tag">Product Analytics</span>
-                  <span class="project-date">Jan–Apr 2025</span>
-                </div>
-                <h3>A/B Testing & Analytics Platform</h3>
-                <p class="preview-text">Designed and analyzed controlled experiments to understand CTR, conversion, retention, and funnel drop-offs using Python and SQL.</p>
-                <button class="expand-btn" aria-label="View project details">
-                  <span class="expand-label">Details</span>
-                  <span class="expand-icon">↓</span>
-                </button>
-              </div>
-              <div class="card-details">
-                <ul>
-                  <li>Applied hypothesis testing and confidence intervals to validate results</li>
-                  <li>Built interactive dashboards to communicate insights to product teams</li>
-                  <li>Translated experiment outcomes into data-driven product decisions</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="project-card glass reveal expandable-card" data-category="ml data" data-expanded="false">
-              <div class="card-preview">
-                <div class="project-top">
-                  <span class="project-tag">RAG / AI Engineering</span>
-                  <span class="project-date">Jan–Apr 2025</span>
-                </div>
-                <h3>Data Engineering Pipeline with RAG</h3>
-                <p class="preview-text">Scalable RAG-based system using LangChain, Chroma, and Hugging Face embeddings for intelligent querying over unstructured data.</p>
-                <button class="expand-btn" aria-label="View project details">
-                  <span class="expand-label">Details</span>
-                  <span class="expand-icon">↓</span>
-                </button>
-              </div>
-              <div class="card-details">
-                <ul>
-                  <li>Implemented document chunking and vector retrieval pipelines for efficient search</li>
-                  <li>Improved search relevance using Precision@k and Mean Reciprocal Rank (MRR)</li>
-                  <li>Integrated LLMs for contextual response generation, enabling more accurate and natural answers</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="project-card glass reveal expandable-card" data-category="web" data-expanded="false">
-              <div class="card-preview">
-                <div class="project-top">
-                  <span class="project-tag">Software Engineering</span>
-                  <span class="project-date">Jan–Apr 2025</span>
-                </div>
-                <h3>The Grid – Collaborative Platform</h3>
-                <p class="preview-text">Backend services, authentication workflows, and REST APIs using Go, GoSwagger, and SQL for a multi-user collaboration platform.</p>
-                <button class="expand-btn" aria-label="View project details">
-                  <span class="expand-label">Details</span>
-                  <span class="expand-icon">↓</span>
-                </button>
-              </div>
-              <div class="card-details">
-                <ul>
-                  <li>Implemented project-management features for team workflows</li>
-                  <li>Worked in an agile Git-based workflow development process</li>
-                  <li>Focused on backend reliability and smooth collaboration across users</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="project-card glass reveal expandable-card" data-category="ml data" data-expanded="false">
-              <div class="card-preview">
-                <div class="project-top">
-                  <span class="project-tag">Forecasting</span>
-                  <span class="project-date">Aug–Dec 2025</span>
-                </div>
-                <h3>Air Temperature Prediction</h3>
-                <p class="preview-text">LSTM and XGBoost models forecasting air temperature from 8+ years of MODIS satellite data across international airports in India.</p>
-                <button class="expand-btn" aria-label="View project details">
-                  <span class="expand-label">Details</span>
-                  <span class="expand-icon">↓</span>
-                </button>
-              </div>
-              <div class="card-details">
-                <ul>
-                  <li>Created lag variables and rolling statistics for temporal feature engineering</li>
-                  <li>Performed exploratory data analysis and visualized seasonal trends using Pandas and Matplotlib</li>
-                  <li>Achieved 2.1°C RMSE, reducing prediction error by 39% over baseline</li>
-                  <li>Conducted model comparisons to select best-performing forecasting approach</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="project-card glass reveal expandable-card" data-category="ml" data-expanded="false">
-              <div class="card-preview">
-                <div class="project-top">
-                  <span class="project-tag">NLP</span>
-                  <span class="project-date">Aug–Dec 2024</span>
-                </div>
-                <h3>RecipeGen – Recipe Generation</h3>
-                <p class="preview-text">Transformer-based text generation model that creates step-by-step recipes from ingredient lists.</p>
-                <button class="expand-btn" aria-label="View project details">
-                  <span class="expand-label">Details</span>
-                  <span class="expand-icon">↓</span>
-                </button>
-              </div>
-              <div class="card-details">
-                <ul>
-                  <li>Improved dataset quality through preprocessing and cleaning</li>
-                  <li>Used beam search with length penalties for more coherent and realistic recipes</li>
-                  <li>Achieved a BLEU-4 score of 0.28, demonstrating improved recipe quality and relevance</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="project-card glass reveal expandable-card" data-category="ml" data-expanded="false">
-              <div class="card-preview">
-                <div class="project-top">
-                  <span class="project-tag">Computer Vision</span>
-                  <span class="project-date">Jan–Jun 2024</span>
-                </div>
-                <h3>Skin Lesion Classification</h3>
-                <p class="preview-text">CNN models using ResNet50 and VGG16 transfer learning to classify dermoscopic images, supporting early detection.</p>
-                <button class="expand-btn" aria-label="View project details">
-                  <span class="expand-label">Details</span>
-                  <span class="expand-icon">↓</span>
-                </button>
-              </div>
-              <div class="card-details">
-                <ul>
-                  <li>Applied data augmentation and class balancing to improve robustness</li>
-                  <li>Achieved 81.7% test accuracy and a 0.76 macro F1-score across multiple classes</li>
-                </ul>
-              </div>
-            </article>
-
+          <h3>Session-Aware Music Recommender</h3>
+          <p class="preview-text">Mood trajectory-aware recommendation system over 1.87M real Last.fm scrobbles, modeling how listening sessions evolve emotionally over time.</p>
+          <button class="expand-btn" aria-label="View project details">
+            <span class="expand-label">Details</span>
+            <span class="expand-icon">↓</span>
+          </button>
+        </div>
+        <div class="card-details">
+          <ul>
+            <li>Clustered 164K sessions into 8 mood archetypes; trained PyTorch GRU achieving 49.9% trajectory accuracy (4× random baseline)</li>
+            <li>LightGBM ranker achieving AUC 0.90 on 4.2M session-track pairs; novel Mood Coherence Score 0.864 vs 0.850 baseline</li>
+            <li>Deployed FastAPI + Streamlit "DJ Mode" at ~25ms response time on HuggingFace</li>
+          </ul>
+          <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a href="https://bsrivaishnavi-session-aware-recommender.hf.space" target="_blank" class="btn btn-primary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">Live Demo</a>
+            <a href="https://github.com/BSriVaishnavi/session-aware-recommender" target="_blank" class="btn btn-secondary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">GitHub</a>
           </div>
         </div>
-      </section>
+      </article>
+
+      <article class="project-card glass reveal expandable-card" data-category="ml data" data-expanded="false" style="border-color: rgba(102,126,234,0.25);">
+        <div class="card-preview">
+          <div class="project-top">
+            <span class="project-tag">A/B Testing · Causal Inference</span>
+            <span class="project-date">May 2026 – Present</span>
+          </div>
+          <h3>Causal Marketplace Experimentation Platform</h3>
+          <p class="preview-text">Full-stack A/B experimentation platform on a simulated fashion-electronics marketplace, demonstrating where naive A/B testing fails under seasonal confounding and applying causal inference to recover true treatment effects.</p>
+          <button class="expand-btn" aria-label="View project details">
+            <span class="expand-label">Details</span>
+            <span class="expand-icon">↓</span>
+          </button>
+        </div>
+        <div class="card-details">
+          <ul>
+            <li>Simulated 10K users, 800 products, and 200K interactions with seasonal confounding — naive A/B testing falsely concluded control won, missing <strong>$15,657 in estimated revenue</strong></li>
+            <li>Applied Difference-in-Differences (+1.37pp causal lift) and Synthetic Control (peak lift +2.96pp in December) — decision flipped from "kill variant" to "ship it"</li>
+            <li>Deployed FastAPI recommendation engine + 5-page interactive Streamlit dashboard visualizing A/B vs DiD vs Synthetic Control</li>
+          </ul>
+          <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a href="https://causal-marketplace.streamlit.app/" target="_blank" class="btn btn-primary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">Live Demo</a>
+            <a href="https://github.com/BSriVaishnavi/causal-marketplace" target="_blank" class="btn btn-secondary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass reveal expandable-card" data-category="ml" data-expanded="false" style="border-color: rgba(29,158,117,0.25);">
+        <div class="card-preview">
+          <div class="project-top">
+            <span class="project-tag">NLP · Biodiversity Informatics</span>
+            <span class="project-date">May 2026 – Present</span>
+          </div>
+          <h3>Florida Biodiversity NER Pipeline</h3>
+          <p class="preview-text">End-to-end Named Entity Recognition pipeline over 29,981 real iNaturalist citizen science observations, extracting species, behaviors, and habitats from informal naturalist field notes.</p>
+          <button class="expand-btn" aria-label="View project details">
+            <span class="expand-label">Details</span>
+            <span class="expand-icon">↓</span>
+          </button>
+        </div>
+        <div class="card-details">
+          <ul>
+            <li>Constructed a 300-sentence gold-standard annotation dataset (Cohen's Kappa = 0.8855); BioBERT (F1 = 0.7723) outperformed bert-base-cased (F1 = 0.7632), confirming scientific pre-training improves biological NER</li>
+            <li>Rule-based baseline achieved F1 = 0.959, extracting 100,950 entities and 57,299 structured species-behavior-habitat triplets from 35,015 sentences</li>
+            <li>Deployed interactive Streamlit query interface enabling real-time biodiversity exploration — no code required</li>
+          </ul>
+          <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a href="https://florida-biodiversity-ner-bsrivaishnavi.streamlit.app" target="_blank" class="btn btn-primary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">Live Demo</a>
+            <a href="https://github.com/BSriVaishnavi/Florida-Biodiversity-NER" target="_blank" class="btn btn-secondary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- MORE PROJECTS -->
+    <div class="more-projects-toggle reveal">
+      <button class="more-projects-btn" id="moreProjectsBtn" aria-expanded="false">
+        <span>More Projects</span>
+        <span class="expand-icon">↓</span>
+      </button>
+    </div>
+
+    <div class="more-projects-drawer" id="moreProjectsDrawer">
+      <div class="projects-grid" style="margin-top: 1.5rem;">
+
+        <article class="project-card glass expandable-card" data-category="web" data-expanded="false">
+          <div class="card-preview">
+            <div class="project-top">
+              <span class="project-tag">Software Engineering</span>
+              <span class="project-date">Jan–Apr 2025</span>
+            </div>
+            <h3>The Grid – Collaborative Platform</h3>
+            <p class="preview-text">Backend services, authentication workflows, and REST APIs using Go, GoSwagger, and SQL for a multi-user collaboration platform.</p>
+            <button class="expand-btn" aria-label="View project details">
+              <span class="expand-label">Details</span>
+              <span class="expand-icon">↓</span>
+            </button>
+          </div>
+          <div class="card-details">
+            <ul>
+              <li>Implemented project-management features for team workflows</li>
+              <li>Worked in an agile Git-based workflow development process</li>
+              <li>Focused on backend reliability and smooth collaboration across users</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card glass expandable-card" data-category="ml data" data-expanded="false">
+          <div class="card-preview">
+            <div class="project-top">
+              <span class="project-tag">Forecasting</span>
+              <span class="project-date">Aug–Dec 2025</span>
+            </div>
+            <h3>Air Temperature Prediction</h3>
+            <p class="preview-text">LSTM and XGBoost models forecasting air temperature from 8+ years of MODIS satellite data across international airports in India.</p>
+            <button class="expand-btn" aria-label="View project details">
+              <span class="expand-label">Details</span>
+              <span class="expand-icon">↓</span>
+            </button>
+          </div>
+          <div class="card-details">
+            <ul>
+              <li>Created lag variables and rolling statistics for temporal feature engineering</li>
+              <li>Achieved 2.1°C RMSE, reducing prediction error by 39% over baseline</li>
+              <li>Conducted model comparisons to select best-performing forecasting approach</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card glass expandable-card" data-category="ml" data-expanded="false">
+          <div class="card-preview">
+            <div class="project-top">
+              <span class="project-tag">NLP</span>
+              <span class="project-date">Aug–Dec 2024</span>
+            </div>
+            <h3>RecipeGen – Recipe Generation</h3>
+            <p class="preview-text">Transformer-based text generation model that creates step-by-step recipes from ingredient lists.</p>
+            <button class="expand-btn" aria-label="View project details">
+              <span class="expand-label">Details</span>
+              <span class="expand-icon">↓</span>
+            </button>
+          </div>
+          <div class="card-details">
+            <ul>
+              <li>Used beam search with length penalties for more coherent and realistic recipes</li>
+              <li>Achieved a BLEU-4 score of 0.28</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card glass expandable-card" data-category="ml" data-expanded="false">
+          <div class="card-preview">
+            <div class="project-top">
+              <span class="project-tag">Computer Vision</span>
+              <span class="project-date">Jan–Jun 2024</span>
+            </div>
+            <h3>Skin Lesion Classification</h3>
+            <p class="preview-text">CNN models using ResNet50 and VGG16 transfer learning to classify dermoscopic images, supporting early detection.</p>
+            <button class="expand-btn" aria-label="View project details">
+              <span class="expand-label">Details</span>
+              <span class="expand-icon">↓</span>
+            </button>
+          </div>
+          <div class="card-details">
+            <ul>
+              <li>Applied data augmentation and class balancing to improve robustness</li>
+              <li>Achieved 81.7% test accuracy and a 0.76 macro F1-score</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
       <!-- SKILLS -->
       <section class="section" id="skills">
