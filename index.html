@@ -67,7 +67,7 @@
 
             <div class="mini-stats">
               <div class="stat-card glass reveal">
-                <span class="stat-number" data-target="7">0</span>
+                <span class="stat-number" data-target="8">0</span>
                 <span class="stat-label">Featured Projects</span>
               </div>
               <div class="stat-card glass reveal">
@@ -137,6 +137,25 @@
           </div>
 
           <div class="projects-grid">
+            <article class="project-card glass reveal" data-category="ml nlp" style="border-color: rgba(29,158,117,0.25);">
+  <div class="project-top">
+    <span class="project-tag">NLP · Biodiversity Informatics</span>
+    <span class="project-date">May 2026 – Present</span>
+  </div>
+  <h3>Florida Biodiversity NER Pipeline</h3>
+  <p>
+    Built an end-to-end Named Entity Recognition pipeline over 29,981 real iNaturalist citizen science observations, extracting species, behaviors, and habitats from informal naturalist field notes.
+  </p>
+  <ul>
+    <li>Constructed a 300-sentence gold-standard annotation dataset (Cohen's Kappa = 0.8855); compared bert-base-cased (F1 = 0.7632) vs BioBERT (F1 = 0.7723), confirming scientific pre-training improves biological NER</li>
+    <li>Rule-based baseline achieved F1 = 0.959, extracting 100,950 entities and 57,299 structured species-behavior-habitat triplets from 35,015 sentences</li>
+    <li>Deployed interactive Streamlit query interface enabling real-time biodiversity exploration — no code required</li>
+  </ul>
+  <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+    <a href="https://florida-biodiversity-ner-bsrivaishnavi.streamlit.app" target="_blank" class="btn btn-primary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">🌿 Live Demo</a>
+    <a href="https://github.com/BSriVaishnavi/Florida-Biodiversity-NER" target="_blank" class="btn btn-secondary" style="min-height:36px; padding:0.5rem 1rem; font-size:0.85rem;">GitHub</a>
+  </div>
+</article>
             <article class="project-card glass reveal" data-category="ml data" style="border-color: rgba(119,230,255,0.25);">
   <div class="project-top">
     <span class="project-tag">ML Engineering</span>
