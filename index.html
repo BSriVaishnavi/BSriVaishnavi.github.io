@@ -7,7 +7,624 @@
     <meta name="description" content="Portfolio website for YLR Sri Vaishnavi Borusu - MS in Computer Science at the University of Florida, focused on AI, ML, data science, software engineering, and product analytics." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="styles.css" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Figtree:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #2a4f6e;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-strong: rgba(255, 255, 255, 0.09);
+  --border: rgba(255, 255, 255, 0.09);
+  --text: #f0f0f0;
+  --muted: #f0f0f0;
+  --accent: #9bd7d1;
+  --accent-2: #f26627;
+  --accent-3: #e8b84b;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  --radius: 28px;
+  --font-serif: 'Libre Baskerville', serif;
+  --font-sans: 'Figtree', sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  background:
+    radial-gradient(circle at top left, rgba(155, 215, 209, 0.08), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(242, 102, 39, 0.06), transparent 30%),
+    linear-gradient(180deg, #254869 0%, #2a4f6e 40%, #2c5272 100%);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; }
+
+.container {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.section { padding: 64px 0; }
+
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.page-glow {
+  position: fixed;
+  width: 380px;
+  height: 380px;
+  border-radius: 999px;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.glow-1 { top: 120px; left: -90px; background: rgba(155, 215, 209, 0.12); }
+.glow-2 { top: 260px; right: -120px; background: rgba(242, 102, 39, 0.1); }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(37, 72, 105, 0.9);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  font-family: var(--font-serif);
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(155, 215, 209, 0.15);
+  border: 1px solid rgba(155, 215, 209, 0.3);
+  font-family: var(--font-serif);
+}
+
+.nav { display: flex; gap: 1.25rem; }
+
+.nav a, .site-footer a {
+  color: var(--accent-2);
+  text-decoration: none;
+  font-family: var(--font-serif);
+  transition: color 0.25s ease;
+}
+
+.nav a:hover, .site-footer a:hover { color: var(--text); }
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  margin: 5px 0;
+  border-radius: 10px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  align-items: center;
+  gap: 2rem;
+  min-height: calc(100vh - 110px);
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: 1.15;
+  font-weight: 400;
+  margin: 0.5rem 0 1rem;
+  letter-spacing: -0.01em;
+}
+
+.gradient-text-gold { color: var(--accent-3); }
+.gradient-text-orange { color: var(--accent-2); }
+.gradient-text-teal { color: var(--accent); }
+
+.eyebrow {
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-serif);
+}
+
+.hero-actions, .contact-links, .mini-stats, .focus-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-height: 48px;
+  padding: 0.85rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--accent);
+  color: #2a4f6e;
+  box-shadow: 0 12px 28px rgba(155, 215, 209, 0.2);
+}
+
+.btn-secondary {
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+
+.hero-panel {
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.panel-top {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-2);
+  font-size: 0.85rem;
+  font-family: var(--font-sans);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent-2);
+  box-shadow: 0 0 14px rgba(242, 102, 39, 0.6);
+  flex-shrink: 0;
+}
+
+.profile-block h2 { margin-top: 0; margin-bottom: 0.5rem; color: var(--text); font-family: var(--font-serif); }
+.profile-block p { color: var(--muted); margin: 0.25rem 0; font-size: 0.88rem; font-family: var(--font-sans); }
+
+.focus-chip {
+  padding: 0.52rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(155, 215, 209, 0.25);
+  background: rgba(155, 215, 209, 0.07);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-family: var(--font-sans);
+}
+
+.mini-stats { margin-top: 2rem; }
+
+.stat-card {
+  min-width: 150px;
+  padding: 1rem 1.05rem;
+  border-radius: 22px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+  font-family: var(--font-serif);
+}
+
+.stat-label { color: var(--muted); font-size: 0.82rem; font-family: var(--font-sans); }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.two-col-skills {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Stacks the multiple experience cards inside the right column */
+.experience-stack {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.section-heading h2 { margin-top: 0; font-family: var(--font-serif); font-weight: 400; color: var(--text); }
+.section-heading .eyebrow { margin-bottom: 0.5rem; }
+
+.section-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 { margin-top: 0; font-family: var(--font-serif); font-weight: 400; color: var(--text); }
+
+.project-filters { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.filter-btn {
+  color: var(--muted);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  font-weight: 400;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: rgba(155, 215, 209, 0.12);
+  color: var(--accent);
+  border-color: rgba(155, 215, 209, 0.3);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.expandable-card {
+  border-radius: var(--radius);
+  transition: transform 0.28s ease, border-color 0.28s ease;
+  cursor: default;
+}
+
+.expandable-card:hover { border-color: rgba(155, 215, 209, 0.25); }
+
+.card-preview { padding: 1.75rem; }
+
+.card-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, padding 0.3s ease;
+  opacity: 0;
+  padding: 0 1.75rem;
+}
+
+.expandable-card[data-expanded="true"] .card-details {
+  max-height: 600px;
+  opacity: 1;
+  padding: 0 1.75rem 1.75rem;
+}
+
+.expandable-card[data-expanded="true"] .expand-icon { transform: rotate(180deg); }
+
+.expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(242, 102, 39, 0.3);
+  background: rgba(242, 102, 39, 0.06);
+  color: var(--accent-2);
+  font-size: 0.82rem;
+  font-weight: 400;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.expand-btn:hover {
+  background: rgba(242, 102, 39, 0.12);
+  border-color: rgba(242, 102, 39, 0.5);
+  transform: translateY(-1px);
+}
+
+.expand-icon {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.skill-preview-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.skill-preview-chips span {
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+}
+
+.chip-more {
+  background: rgba(155, 215, 209, 0.08) !important;
+  border-color: rgba(155, 215, 209, 0.25) !important;
+  color: var(--accent) !important;
+}
+
+.card-details p, .card-details li {
+  color: var(--muted);
+  line-height: 1.8;
+  font-family: var(--font-sans);
+}
+
+.card-details ul { padding-left: 1.1rem; margin: 0; }
+.card-details li { margin-bottom: 0.5rem; }
+
+.skill-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-cloud span {
+  padding: 0.52rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-family: var(--font-sans);
+}
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-tag {
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(155, 215, 209, 0.25);
+  background: rgba(155, 215, 209, 0.07);
+  color: var(--accent);
+  font-size: 0.76rem;
+  white-space: nowrap;
+  font-family: var(--font-sans);
+}
+
+.project-date {
+  color: rgba(239, 238, 238, 0.4);
+  font-size: 0.76rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-family: var(--font-sans);
+}
+
+.card-preview h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text);
+  font-family: var(--font-serif);
+}
+
+.preview-text {
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.75;
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+.skills-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.skill-panel:last-child { grid-column: span 2; }
+.skill-panel .card-preview { padding: 1.4rem; }
+.skill-panel h3 { margin: 0 0 0.6rem; font-size: 0.95rem; font-weight: 700; color: var(--text); font-family: var(--font-serif); }
+
+.education-card .card-preview, .coursework-card .card-preview { padding: 1.5rem; }
+.education-card h2 { font-family: var(--font-serif); font-weight: 400; margin: 0.3rem 0 0.5rem; color: var(--text); }
+.degree { font-size: 0.95rem; color: var(--muted); margin: 0 0 0.6rem; font-family: var(--font-sans); }
+.meta { color: var(--muted); font-size: 0.85rem; margin: 0 0 0.8rem; font-family: var(--font-sans); }
+.coursework-card h3 { margin: 0 0 0.6rem; font-size: 0.95rem; font-weight: 700; color: var(--text); font-family: var(--font-serif); }
+
+.edu-highlight {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  min-height: 50px;
+  border-radius: 18px;
+  background: rgba(155, 215, 209, 0.1);
+  border: 1px solid rgba(155, 215, 209, 0.25);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+  font-family: var(--font-serif);
+}
+
+.course-list { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.course-list span {
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-family: var(--font-sans);
+}
+
+.contact-card {
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.contact-card h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  margin: 0.5rem 0 1rem;
+  color: var(--text);
+}
+
+.contact-card p { color: var(--muted); max-width: 480px; margin: 0 auto 1.5rem; font-family: var(--font-sans); }
+.contact-links { justify-content: center; }
+
+.site-footer { padding: 1.5rem 0 2.2rem; color: var(--muted); font-size: 0.85rem; font-family: var(--font-sans); }
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.more-projects-toggle {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.more-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.more-projects-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.more-projects-drawer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  opacity: 0;
+}
+
+.more-projects-drawer.open {
+  max-height: 3000px;
+  opacity: 1;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.project-card.hidden { display: none; }
+
+@media (max-width: 1080px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .skills-layout { grid-template-columns: 1fr; }
+  .skill-panel:last-child { grid-column: auto; }
+  .two-col, .two-col-skills, .education-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .section { padding: 48px 0; }
+  .menu-toggle { display: block; z-index: 25; }
+
+  .nav {
+    position: absolute;
+    top: 76px;
+    right: 1rem;
+    left: 1rem;
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+    background: rgba(37, 72, 105, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+  }
+
+  .nav.open { display: flex; }
+
+  .section-header, .footer-wrap { flex-direction: column; align-items: flex-start; }
+  .project-top { flex-wrap: wrap; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: clamp(1.9rem, 8vw, 2.8rem); }
+}
+
+</style>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Zilla+Slab:wght@400;500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />  </head>
   <body>
     <div class="page-glow glow-1"></div>
@@ -51,7 +668,7 @@
             </div>
             <div class="mini-stats">
               <div class="stat-card glass reveal">
-                <span class="stat-number" data-target="7">0</span>
+                <span class="stat-number" data-target="6">0</span>
                 <span class="stat-label">Featured Projects</span>
               </div>
               <div class="stat-card glass reveal">
@@ -64,7 +681,7 @@
           <aside class="hero-panel glass reveal">
             <div class="panel-top">
               <span class="status-dot"></span>
-              <span>Open to internships and technical opportunities</span>
+              <span>Open to full-time roles · Graduating December 2026</span>
             </div>
             <div class="profile-block">
               <h2>YLR Sri Vaishnavi Borusu</h2>
@@ -74,8 +691,8 @@
             <div class="focus-grid">
               <div class="focus-chip">Machine Learning</div>
               <div class="focus-chip">Data Science</div>
+              <div class="focus-chip">Data Engineering</div>
               <div class="focus-chip">RAG Systems</div>
-              <div class="focus-chip">Full-Stack Dev</div>
               <div class="focus-chip">Product Analytics</div>
               <div class="focus-chip">Distributed Systems</div>
             </div>
@@ -113,6 +730,30 @@
       <h2>Where I've worked.</h2>
     </div>
 
+    <div class="experience-stack">
+
+    <div class="glass expandable-card reveal" data-expanded="false">
+      <div class="card-preview">
+        <div class="project-top">
+          <span class="project-tag">Volunteer Research</span>
+          <span class="project-date">Jan 2026 – Present</span>
+        </div>
+        <h3>AKI Prediction &amp; Clinical Data Governance Platform</h3>
+        <p class="preview-text">University of Florida — independent validation of a published acute kidney injury prediction model, built on a governed data pipeline with lineage tracking and quality checks.</p>
+        <button class="expand-btn" aria-label="See details">
+          <span class="expand-label">Details</span>
+          <span class="expand-icon">↓</span>
+        </button>
+      </div>
+      <div class="card-details">
+        <ul>
+          <li>Designing a governed data pipeline on Google BigQuery, a cloud relational database, to independently validate a published AKI prediction model, with automated lineage tracking and metadata cataloging</li>
+          <li>Building a LangGraph agent that surfaces data quality and lineage, paired with a RAG-grounded LLM clinical alert generator based on KDIGO 2024 guidelines</li>
+          <li>Incorporating subgroup fairness analysis into a model governance framework</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="glass expandable-card reveal" data-expanded="false">
       <div class="card-preview">
         <div class="project-top">
@@ -128,11 +769,35 @@
       </div>
       <div class="card-details">
         <ul>
-          <li>Developed a multi-model forecasting framework (XGBoost, LSTM, Random Forest, SARIMA) to predict air temperatures for major aviation hubs using 8+ years of MODIS satellite data</li>
+          <li>Developed a data and trend analysis framework (XGBoost, LSTM, Random Forest, SARIMA) forecasting air temperatures for major aviation hubs from 8+ years of MODIS satellite data</li>
           <li>Achieved 2.1°C RMSE — 39% error reduction over baseline models</li>
           <li>Engineered 10+ temporal features including rolling statistics, seasonal decomposition, and lag variables</li>
         </ul>
       </div>
+    </div>
+
+    <div class="glass expandable-card reveal" data-expanded="false">
+      <div class="card-preview">
+        <div class="project-top">
+          <span class="project-tag">Summer Internship</span>
+          <span class="project-date">May 2024 – Jul 2024</span>
+        </div>
+        <h3>Computational Finance Application — University of Florida, CISE</h3>
+        <p class="preview-text">Correlation-based pattern recognition over equities price data, powering a rules-based trading strategy.</p>
+        <button class="expand-btn" aria-label="See details">
+          <span class="expand-label">Details</span>
+          <span class="expand-icon">↓</span>
+        </button>
+      </div>
+      <div class="card-details">
+        <ul>
+          <li>Built a correlation-based pattern recognition system matching equities price data to reference K-waves to drive a rules-based trading strategy</li>
+          <li>Optimized strategy parameters, improving trading profitability over the baseline</li>
+          <li>Evaluated performance through transaction-level profitability analysis and runtime benchmarking</li>
+        </ul>
+      </div>
+    </div>
+
     </div>
 
   </div>
@@ -161,7 +826,7 @@
         <div class="card-preview">
           <div class="project-top">
             <span class="project-tag">ML Engineering</span>
-            <span class="project-date">Apr 2026 – May 2026</span>
+            <span class="project-date">May 2026 – Jun 2026</span>
           </div>
           <h3>Session-Aware Music Recommender</h3>
           <p class="preview-text">Mood trajectory-aware recommendation system over 1.87M real Last.fm scrobbles, modeling how listening sessions evolve emotionally over time.</p>
@@ -187,9 +852,9 @@
         <div class="card-preview">
           <div class="project-top">
             <span class="project-tag">A/B Testing · Causal Inference</span>
-            <span class="project-date">May 2026 – Present</span>
+            <span class="project-date">Apr 2026 – May 2026</span>
           </div>
-          <h3>Causal Marketplace Experimentation Platform</h3>
+          <h3>Causal Marketplace A/B Platform</h3>
           <p class="preview-text">Full-stack A/B experimentation platform on a simulated fashion-electronics marketplace, demonstrating where naive A/B testing fails under seasonal confounding and applying causal inference to recover true treatment effects.</p>
           <button class="expand-btn" aria-label="View project details">
             <span class="expand-label">Details</span>
@@ -213,7 +878,7 @@
         <div class="card-preview">
           <div class="project-top">
             <span class="project-tag">NLP · Biodiversity Informatics</span>
-            <span class="project-date">May 2026 – Present</span>
+            <span class="project-date">Apr 2026 – May 2026</span>
           </div>
           <h3>Florida Biodiversity NER Pipeline</h3>
           <p class="preview-text">End-to-end Named Entity Recognition pipeline over 29,981 real iNaturalist citizen science observations, extracting species, behaviors, and habitats from informal naturalist field notes.</p>
@@ -330,9 +995,9 @@
 
             <div class="glass skill-panel expandable-card reveal" data-expanded="false">
               <div class="card-preview">
-                <h3>Languages & Frameworks</h3>
+                <h3>Languages &amp; Frameworks</h3>
                 <div class="skill-preview-chips">
-                  <span>Python</span><span>SQL</span><span>Go</span><span class="chip-more">+6 more</span>
+                  <span>Python</span><span>SQL</span><span>C++</span><span class="chip-more">+6 more</span>
                 </div>
                 <button class="expand-btn" aria-label="See all languages">
                   <span class="expand-label">See all</span>
@@ -350,9 +1015,9 @@
 
             <div class="glass skill-panel expandable-card reveal" data-expanded="false">
               <div class="card-preview">
-                <h3>ML, AI & Data</h3>
+                <h3>ML, AI &amp; Data</h3>
                 <div class="skill-preview-chips">
-                  <span>PyTorch</span><span>LangChain</span><span>LLMs</span><span class="chip-more">+7 more</span>
+                  <span>PyTorch</span><span>TensorFlow</span><span>LangGraph</span><span class="chip-more">+7 more</span>
                 </div>
                 <button class="expand-btn" aria-label="See all ML tools">
                   <span class="expand-label">See all</span>
@@ -370,9 +1035,9 @@
 
             <div class="glass skill-panel expandable-card reveal" data-expanded="false">
               <div class="card-preview">
-                <h3>Tools & Infrastructure</h3>
+                <h3>Tools &amp; Infrastructure</h3>
                 <div class="skill-preview-chips">
-                  <span>Docker</span><span>Apache Spark</span><span>Power BI</span><span class="chip-more">+7 more</span>
+                  <span>Apache Spark</span><span>Hadoop</span><span>Google BigQuery</span><span class="chip-more">+9 more</span>
                 </div>
                 <button class="expand-btn" aria-label="See all tools">
                   <span class="expand-label">See all</span>
@@ -381,10 +1046,10 @@
               </div>
               <div class="card-details">
                 <div class="skill-cloud">
-                  <span>Git</span><span>Docker</span><span>Apache Spark</span>
-                  <span>PySpark</span><span>Distributed Computing</span>
-                  <span>Scalable Systems</span><span>Power BI</span>
-                  <span>Matplotlib</span><span>Seaborn</span><span>Canva</span>
+                  <span>Git</span><span>Docker</span><span>AWS</span><span>Apache Spark</span>
+                  <span>PySpark</span><span>Hadoop</span><span>Google BigQuery</span>
+                  <span>Streamlit</span><span>Tableau</span><span>Power BI</span>
+                  <span>Matplotlib</span><span>Seaborn</span>
                 </div>
               </div>
             </div>
@@ -408,7 +1073,7 @@
               </button>
             </div>
             <div class="card-details">
-              <p class="meta">Gainesville, FL · Aug 2025 – Present</p>
+              <p class="meta">Gainesville, FL · Aug 2025 – Present · Graduating December 2026</p>
               <p style="color: var(--muted); font-size: 0.9rem;">Full-time graduate student in the Department of Computer and Information Science and Engineering.</p>
             </div>
           </div>
@@ -460,6 +1125,137 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+// Mobile nav
+const menuToggle = document.getElementById('menuToggle');
+const siteNav = document.getElementById('siteNav');
+
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+}
+
+siteNav?.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    siteNav.classList.remove('open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// Project filters
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach((btn) => btn.classList.remove('active'));
+    button.classList.add('active');
+    const selected = button.dataset.filter;
+    projectCards.forEach((card) => {
+      const categories = (card.dataset.category || '').split(' ');
+      const shouldShow = selected === 'all' || categories.includes(selected);
+      card.classList.toggle('hidden', !shouldShow);
+    });
+  });
+});
+
+// Expandable cards
+document.querySelectorAll('.expandable-card').forEach((card) => {
+  const btn = card.querySelector('.expand-btn');
+  if (!btn) return;
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isExpanded = card.dataset.expanded === 'true';
+    card.dataset.expanded = String(!isExpanded);
+
+    const label = btn.querySelector('.expand-label');
+    if (label) {
+      label.textContent = isExpanded ? getCollapseLabel(card) : 'Collapse';
+    }
+  });
+});
+
+function getCollapseLabel(card) {
+  if (card.classList.contains('project-card')) return 'Details';
+  if (card.classList.contains('skill-panel')) return 'See all';
+  if (card.classList.contains('education-card')) return 'More details';
+  if (card.classList.contains('coursework-card')) return 'See all courses';
+  return 'Read more';
+}
+
+// Intersection observer for reveal animations
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+// Animated stat numbers
+const animateNumber = (element) => {
+  const rawTarget = element.dataset.target;
+  const target = Number(rawTarget);
+  const duration = 1400;
+  const startTime = performance.now();
+
+  const step = (currentTime) => {
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+    const currentValue = target * (1 - Math.pow(1 - progress, 3));
+
+    if (String(rawTarget).includes('.')) {
+      element.textContent = currentValue.toFixed(2);
+    } else {
+      element.textContent = Math.round(currentValue).toString();
+    }
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      element.textContent = rawTarget;
+    }
+  };
+
+  requestAnimationFrame(step);
+};
+
+const statsObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateNumber(entry.target);
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.8 }
+);
+
+document.querySelectorAll('.stat-number').forEach((n) => statsObserver.observe(n));
+
+const moreBtn = document.getElementById('moreProjectsBtn');
+const moreDrawer = document.getElementById('moreProjectsDrawer');
+
+if (moreBtn && moreDrawer) {
+  moreBtn.addEventListener('click', () => {
+    const isOpen = moreDrawer.classList.toggle('open');
+    moreBtn.setAttribute('aria-expanded', String(isOpen));
+    const label = moreBtn.querySelector('span');
+    const icon = moreBtn.querySelector('.expand-icon');
+    if (label) label.textContent = isOpen ? 'Show Less' : 'More Projects';
+    if (icon) icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+  });
+}
+
+</script>
   </body>
 </html>
