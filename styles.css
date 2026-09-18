@@ -262,6 +262,12 @@ img { max-width: 100%; }
   align-items: start;
 }
 
+/* Stacks the multiple experience cards inside the right column */
+.experience-stack {
+  display: grid;
+  gap: 1.5rem;
+}
+
 .education-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
